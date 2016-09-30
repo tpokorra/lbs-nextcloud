@@ -1,18 +1,16 @@
-diff -ur owncloudclient-2.2.0.orig/src/3rdparty/qtsingleapplication/qtlocalpeer.h owncloudclient-2.2.0/src/3rdparty/qtsingleapplication/qtlocalpeer.h
---- owncloudclient-2.2.0.orig/src/3rdparty/qtsingleapplication/qtlocalpeer.h	2016-05-16 21:29:00.151014495 +0300
-+++ owncloudclient-2.2.0/src/3rdparty/qtsingleapplication/qtlocalpeer.h	2016-05-16 21:41:03.791016304 +0300
+--- owncloudclient-2.2.2-orig/client/src/3rdparty/qtsingleapplication/qtlocalpeer.h	2016-06-29 21:48:37.094074233 -0400
++++ owncloudclient-2.2.2/client/src/3rdparty/qtsingleapplication/qtlocalpeer.h	2016-06-29 21:49:38.034488120 -0400
 @@ -27,7 +27,7 @@
  **
  ****************************************************************************/
  
 -#include <qtlockedfile.h>
-+#include <qt5/QTSolutions/qtlockedfile.h>
++#include <QTSolutions/qtlockedfile.h>
  
  #include <QLocalServer>
  #include <QLocalSocket>
-diff -ur owncloudclient-2.2.0.orig/src/gui/application.cpp owncloudclient-2.2.0/src/gui/application.cpp
---- owncloudclient-2.2.0.orig/src/gui/application.cpp	2016-05-16 21:29:00.149014483 +0300
-+++ owncloudclient-2.2.0/src/gui/application.cpp	2016-05-16 21:41:37.774443966 +0300
+--- owncloudclient-2.2.2-orig/client/src/gui/application.cpp	2016-06-29 21:48:37.103074146 -0400
++++ owncloudclient-2.2.2/client/src/gui/application.cpp	2016-06-29 21:50:33.785964046 -0400
 @@ -92,7 +92,7 @@
  // ----------------------------------------------------------------------------------
  
@@ -22,15 +20,14 @@ diff -ur owncloudclient-2.2.0.orig/src/gui/application.cpp owncloudclient-2.2.0/
      _gui(0),
      _theme(Theme::instance()),
      _helpOnly(false),
-diff -ur owncloudclient-2.2.0.orig/src/gui/application.h owncloudclient-2.2.0/src/gui/application.h
---- owncloudclient-2.2.0.orig/src/gui/application.h	2016-05-16 21:29:00.149014483 +0300
-+++ owncloudclient-2.2.0/src/gui/application.h	2016-05-16 21:42:17.608945259 +0300
+--- owncloudclient-2.2.2-orig/client/src/gui/application.h	2016-06-29 21:48:37.103074146 -0400
++++ owncloudclient-2.2.2/src/client/gui/application.h	2016-06-29 21:52:28.175897863 -0400
 @@ -22,7 +22,7 @@
  #include <QElapsedTimer>
  #include <QNetworkConfigurationManager>
  
 -#include "qtsingleapplication.h"
-+#include "qt5/QtSolutions/QtSingleApplication"
++#include "QtSolutions/QtSingleApplication"
  
  #include "syncresult.h"
  #include "logbrowser.h"
@@ -43,9 +40,8 @@ diff -ur owncloudclient-2.2.0.orig/src/gui/application.h owncloudclient-2.2.0/sr
  {
      Q_OBJECT
  public:
-diff -ur owncloudclient-2.2.0.orig/src/gui/CMakeLists.txt owncloudclient-2.2.0/src/gui/CMakeLists.txt
---- owncloudclient-2.2.0.orig/src/gui/CMakeLists.txt	2016-05-16 21:29:00.149014483 +0300
-+++ owncloudclient-2.2.0/src/gui/CMakeLists.txt	2016-05-16 21:43:44.093190156 +0300
+--- owncloudclient-2.2.2-orig/client/src/gui/CMakeLists.txt	2016-06-29 21:48:37.102074155 -0400
++++ owncloudclient-2.2.2/client/src/gui/CMakeLists.txt	2016-06-29 21:55:29.366222636 -0400
 @@ -143,10 +143,6 @@
  
  set(3rdparty_SRC
