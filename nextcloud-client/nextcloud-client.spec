@@ -159,7 +159,7 @@ fi
 %{_libdir}/libnextcloudsync.so.%{version}
 %{_libdir}/nextcloud/libocsync.so.*
 %doc README.md
-%license COPYING
+#%license COPYING
 %config %{_sysconfdir}/Nextcloud/sync-exclude.lst
 %dir %{_sysconfdir}/Nextcloud
 
@@ -182,7 +182,7 @@ fi
 %{_kf5_datadir}/kservices5/nextclouddolphinactionplugin.desktop
 
 
-%changeloga
+%changelog
 * Fri Sep 30 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.3-1
 - Update to nextcloud client 2.2.3
 
