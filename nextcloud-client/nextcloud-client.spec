@@ -1,7 +1,7 @@
 %global _hardened_build 1
 
 Name:           nextcloud-client
-Version:        2.2.3
+Version:        2.2.4
 Release:        1%{?dist}
 Summary:        The Nextcloud Client
 
@@ -102,7 +102,7 @@ The nextcloud desktop client dolphin extension.
 %setup -q -n client_theming-%{version}
 %setup -T -D -a 1 -n client_theming-%{version}
 rm -Rf client
-mv owncloudclient-2.2.3 client
+mv owncloudclient-%{version} client
 %patch0 -p1
 rm -rf src/3rdparty/qtlockedfile src/3rdparty/qtsingleapplication
 
@@ -183,6 +183,9 @@ fi
 
 
 %changelog
+* Fri Sep 30 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.4-1
+- Update to nextcloud client 2.2.4
+
 * Fri Sep 30 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.3-1
 - Update to nextcloud client 2.2.3
 
