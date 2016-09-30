@@ -1,0 +1,18 @@
+diff -urNr client-2.1.1-orig/shell_integration/nautilus/syncstate.py client-2.1.1/shell_integration/nautilus/syncstate.py
+--- client-2.1.1-orig/shell_integration/nautilus/syncstate.py	2016-02-09 16:07:08.000000000 +0100
++++ client-2.1.1/shell_integration/nautilus/syncstate.py	2016-02-10 12:34:48.186760697 +0100
+@@ -1,5 +1,3 @@
+-#!/usr/bin/python3
+-#
+ # Copyright (C) by Klaas Freitag <freitag@owncloud.com>
+ #
+ # This program is the core of OwnCloud integration to Nautilus
+diff -urNr client-2.1.1-orig/shell_integration/nautilus/syncstate.py client-2.1.1/shell_integration/nautilus/syncstate.py
+--- client-2.1.1-orig/shell_integration/nautilus/syncstate.py	2016-02-09 16:07:08.000000000 +0100
++++ client-2.1.1/shell_integration/nautilus/syncstate.py	2016-02-10 12:34:48.186760697 +0100
+@@ -1,5 +1,3 @@
+-#!/usr/bin/python3
+-#
+ # Copyright (C) by Klaas Freitag <freitag@owncloud.com>
+ #
+ # This program is the core of OwnCloud integration to Nautilus
