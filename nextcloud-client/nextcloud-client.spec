@@ -8,8 +8,9 @@ Summary:        The Nextcloud Client
 # -libs are LGPLv2+, rest GPLv2
 License:        LGPLv2+ and GPLv2
 Url:            https://nextcloud.com/install/#install-clients
-Source0:        nextcloud-client-%{version}.tar.gz
-Source1:        %{name}.appdata.xml
+Source0:        https://github.com/nextcloud/client_theming/archive/v%{version}.tar.gz
+Source1:        https://download.owncloud.com/desktop/stable/owncloudclient-%{version}.tar.xz
+Source2:        %{name}.appdata.xml
 Patch0:         %{name}-2.2.3-syslibs.patch
 
 BuildRequires:  check
@@ -98,7 +99,10 @@ The nextcloud desktop client dolphin extension.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n client_theming-%{version}
+%setup -T -D -a 1 -n client_theming-%{version}
+rm -Rf client
+mv owncloudclient-2.2.3 client
 %patch0 -p1
 rm -rf src/3rdparty/qtlockedfile src/3rdparty/qtsingleapplication
 
@@ -117,7 +121,7 @@ make install DESTDIR=%{buildroot}
 popd
 %find_lang client --with-qt
 mkdir -p %{buildroot}%{_datadir}/appdata/
-install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
+install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
 
 
 %check
