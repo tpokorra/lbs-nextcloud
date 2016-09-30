@@ -21,11 +21,7 @@ BuildRequires:  neon-devel
 BuildRequires:  openssl-devel
 BuildRequires:  python-sphinx
 BuildRequires:  qtlockedfile-qt5-devel
-%if 0%{?fedora} < 24
-BuildRequires:  qtkeychain-qt5-devel == 0.5.0
-%else
-BuildRequires:  qtkeychain-qt5-devel >= 0.7.0
-%endif
+BuildRequires:  qtkeychain-qt5-devel
 BuildRequires:  qtsingleapplication-qt5-devel
 BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtbase-devel
