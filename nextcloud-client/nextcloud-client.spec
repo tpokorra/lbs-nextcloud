@@ -2,7 +2,7 @@
 
 Name:           nextcloud-client
 Version:        2.2.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        The Nextcloud Client
 
 # -libs are LGPLv2+, rest GPLv2
@@ -12,6 +12,7 @@ Source0:        https://github.com/nextcloud/client_theming/archive/v%{version}.
 Source1:        https://download.owncloud.com/desktop/stable/owncloudclient-%{version}.tar.xz
 Source2:        %{name}.appdata.xml
 Patch0:         %{name}-2.2.3-syslibs.patch
+Patch1:         %{name}-2.2.4-appshortname.patch
 
 BuildRequires:  check
 BuildRequires:  cmake
@@ -104,10 +105,15 @@ The nextcloud desktop client dolphin extension.
 rm -Rf client
 mv owncloudclient-%{version} client
 %patch0 -p1
+%patch1 -p1
 rm -rf src/3rdparty/qtlockedfile src/3rdparty/qtsingleapplication
 
 
 %build
+%if %{fedora} > 25
+#see https://www.openssl.org/docs/manmaster/crypto/OpenSSL_add_all_algorithms.html
+sed -i "s#SSLeay_add_all_algorithms#//OPENSSL_init_crypto#g" client/src/3rdparty/certificates/p12topem.cpp
+%endif
 mkdir build
 pushd build
 %cmake_kf5 .. -DCMAKE_SHARED_LINKER_FLAGS="-Wl,--as-needed" -D OEM_THEME_DIR=`pwd`/../nextcloudtheme ../client
@@ -183,6 +189,10 @@ fi
 
 
 %changelog
+* Fri Oct 21 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.4-2
+- change appname of nautilus plugin to Nextcloud
+- fix for Fedora 26 OpenSSL 1.1
+
 * Fri Sep 30 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.4-1
 - Update to nextcloud client 2.2.4
 
