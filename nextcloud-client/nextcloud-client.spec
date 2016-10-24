@@ -110,7 +110,7 @@ rm -rf src/3rdparty/qtlockedfile src/3rdparty/qtsingleapplication
 
 
 %build
-%if %{fedora} > 25
+%if 0%{?fedora} > 25
 #see https://www.openssl.org/docs/manmaster/crypto/OpenSSL_add_all_algorithms.html
 sed -i "s#SSLeay_add_all_algorithms#//OPENSSL_init_crypto#g" client/src/3rdparty/certificates/p12topem.cpp
 %endif
