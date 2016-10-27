@@ -2,7 +2,7 @@
 
 Name:           nextcloud-client
 Version:        2.2.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        The Nextcloud Client
 
 # -libs are LGPLv2+, rest GPLv2
@@ -76,6 +76,7 @@ Development headers for use of the nextcloud-client library
 Summary: nextcloud client nautilus extension
 Requires: nautilus
 Requires: nautilus-python
+Requires: %{name}-%{?_isa} = %{version}-%{release}
 Provides: mirall-nautilus = %{version}-%{release}
 Obsoletes: mirall-nautilus < 1.8.0
 
@@ -86,6 +87,7 @@ The nextcloud desktop client nautilus extension.
 Summary:        Nemo overlay icons
 Requires:       nemo
 Requires:       nemo-python
+Requires:       %{name}-%{?_isa} = %{version}-%{release}
 
 %description nemo
 This package provides overlay icons to visualize the sync state
@@ -94,6 +96,7 @@ in the nemo file manager.
 %package dolphin
 Summary:        Dolphin overlay icons
 Requires:       dolphin
+Requires:       %{name}-%{?_isa} = %{version}-%{release}
 
 %description dolphin
 The nextcloud desktop client dolphin extension.
@@ -189,6 +192,9 @@ fi
 
 
 %changelog
+* Thu Oct 27 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.4-3
+- nautilus and dolphin plugins require the nextcloud-client package
+
 * Fri Oct 21 2016 Timotheus Pokorra <timotheus.pokorra@solidcharity.com> - 2.2.4-2
 - change appname of nautilus plugin to Nextcloud
 - fix for Fedora 26 OpenSSL 1.1
